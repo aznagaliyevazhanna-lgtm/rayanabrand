@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rayana Brand · Ақтау</title>
+<meta name="description" content="Rayana Brand — Ақтаудағы балалар киімі. WhatsApp, TikTok, 2GIS. Hazar Bazary, 019 бутик.">
+<meta name="theme-color" content="#fdf3f7">
+<link rel="icon" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #fffdfd;
+    --pink-soft: #fbe0ea;
+    --blue-soft: #dbeaf8;
+    --ink: #232a3d;
+    --ink-soft: #6f7489;
+    --accent: linear-gradient(135deg, #e391ad 0%, #f8cfdc 28%, #ffffff 50%, #c7def3 72%, #7aa6d6 100%);
+    --pink-solid: #d98aa6;
+    --blue-solid: #7aa6d6;
+    --accent-line: rgba(217, 138, 166, .5);
+    --shadow: 0 14px 34px -16px rgba(90, 90, 140, .4);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100%; }
+  body {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--ink);
+    font-variant-numeric: lining-nums;
+    background-color: var(--white);
+    background-image:
+      /* Атлас жылтыры / Атласный блеск */
+      linear-gradient(115deg, transparent 20%, rgba(255,255,255,.7) 38%, transparent 52%, rgba(255,255,255,.5) 70%, transparent 85%),
+      /* Ақ-қызғылт-көк реңк / Бело-розово-голубое сияние */
+      radial-gradient(ellipse at 0% 0%, var(--pink-soft) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 18%, var(--blue-soft) 0%, transparent 45%),
+      radial-gradient(ellipse at 0% 85%, var(--blue-soft) 0%, transparent 50%),
+      radial-gradient(ellipse at 100% 100%, var(--pink-soft) 0%, transparent 55%),
+      /* RB монограмма өрнегі / Узор-монограмма RB */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%237aa6d6' stroke-opacity='.22' stroke-width='1'%3E%3Cpath d='M60 18l14 14-14 14-14-14z'/%3E%3Cpath d='M0 78l14 14L0 106M120 78l-14 14 14 14'/%3E%3C/g%3E%3Cg fill='%23d98aa6' fill-opacity='.2' font-family='Georgia,serif' font-size='13' letter-spacing='1'%3E%3Ctext x='51' y='37'%3ERB%3C/text%3E%3C/g%3E%3Cpath d='M60 88c-2-3-6-3-6 0 0 3 6 6 6 6s6-3 6-6c0-3-4-3-6 0z' fill='%23d98aa6' fill-opacity='.22'/%3E%3Ccircle cx='0' cy='32' r='1.6' fill='%237aa6d6' fill-opacity='.3'/%3E%3Ccircle cx='120' cy='32' r='1.6' fill='%237aa6d6' fill-opacity='.3'/%3E%3C/svg%3E");
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 120px 120px;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Алтын жақтау / Золотая рамка */
+  .frame {
+    position: fixed; inset: 10px;
+    border: 1px solid var(--accent-line);
+    pointer-events: none; z-index: 0;
+  }
+  .frame::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid rgba(122, 166, 214, .45);
+  }
+  .corner { position: fixed; width: 54px; height: 54px; pointer-events: none; z-index: 0; color: var(--pink-solid); }
+  .corner--tl { top: 4px; left: 4px; }
+  .corner--tr { top: 4px; right: 4px; transform: scaleX(-1); color: var(--blue-solid); }
+  .corner--bl { bottom: 4px; left: 4px; transform: scaleY(-1); color: var(--blue-solid); }
+  .corner--br { bottom: 4px; right: 4px; transform: scale(-1, -1); }
+
+  .page {
+    position: relative; z-index: 1;
+    width: 100%;
+    max-width: 430px;
+    padding: 46px 6px 44px;
+    text-align: center;
+  }
+
+  /* Тәж / Корона */
+  .crown { width: 46px; display: block; margin: 0 auto 6px; filter: drop-shadow(0 2px 3px rgba(120, 85, 20, .25)); }
+
+  /* Логотип / Logo */
+  .logo {
+    width: 188px; height: 188px;
+    margin: 0 auto 22px;
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: var(--shadow), 0 0 0 7px rgba(255, 255, 255, .9), 0 0 0 8px rgba(122, 166, 214, .55);
+  }
+  .logo__inner {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff 0%, #fff 60%, #f6f2f8 100%);
+    display: grid; place-items: center;
+    overflow: hidden;
+  }
+  .logo img { width: 88%; mix-blend-mode: multiply; }
+
+  h1 {
+    font-weight: 600;
+    font-size: clamp(42px, 12.5vw, 56px);
+    line-height: 1;
+    letter-spacing: .01em;
+  }
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin: 14px auto 12px; max-width: 250px;
+  }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--pink-solid)); }
+  .divider::after { background: linear-gradient(90deg, var(--blue-solid), transparent); }
+  .divider span { width: 9px; height: 9px; background: var(--accent); transform: rotate(45deg); }
+  .tagline {
+    font-family: Montserrat, sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: .4em;
+    color: var(--ink-soft);
+  }
+  .address {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 22px 0 26px;
+    font-size: 20px; font-weight: 600; color: var(--ink);
+    text-decoration: none;
+  }
+  .address svg { width: 18px; height: 18px; color: var(--pink-solid); flex: none; }
+
+  /* Карточкалар / Cards */
+  .links { display: grid; gap: 14px; }
+  .card {
+    display: block;
+    padding: 1.5px;
+    border-radius: 22px;
+    background: var(--accent);
+    box-shadow: var(--shadow);
+    text-decoration: none; color: inherit; text-align: left;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card__in {
+    display: flex; align-items: center; gap: 14px;
+    padding: 13px 16px 13px 13px;
+    border-radius: 20.5px;
+    background: linear-gradient(160deg, #ffffff 0%, #f3f8fd 100%);
+  }
+  .card:nth-child(2) .card__in { background: linear-gradient(160deg, #ffffff 0%, #fdf2f6 100%);
+  }
+  .card:hover, .card:focus-visible { transform: translateY(-2px); box-shadow: 0 20px 38px -16px rgba(90, 90, 140, .5); outline: none; }
+  .card:active { transform: scale(.985); }
+  .card__icon {
+    width: 56px; height: 56px; flex: none;
+    padding: 1.5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .card__icon > span {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff, #f4f1f8);
+    display: grid; place-items: center;
+  }
+  .card__icon svg { width: 28px; height: 28px; }
+  .card__body {
+    flex: 1; min-width: 0;
+    padding-left: 14px;
+    border-left: 1px solid var(--accent-line);
+  }
+  .card__title { display: block; font-size: 22px; font-weight: 700; letter-spacing: .06em; line-height: 1.1; font-variant-numeric: lining-nums; }
+  .card__sub { display: block; font-size: 16.5px; font-weight: 500; color: var(--ink-soft); margin-top: 2px; }
+  .card__arrow { width: 18px; height: 18px; color: var(--blue-solid); flex: none; }
+  .card:nth-child(2) .card__arrow { color: var(--pink-solid); }
+
+  /* Төменгі бөлім / Footer */
+  .info { margin-top: 30px; display: grid; gap: 8px; justify-items: center; }
+  .info__row { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 500; color: var(--ink-soft); }
+  .info__row svg { width: 21px; height: 21px; color: var(--pink-solid); flex: none; }
+  .info__row + .info__row svg { color: var(--blue-solid); }
+  .handle {
+    display: inline-block; margin-top: 24px;
+    padding: 1px; border-radius: 999px;
+    background: var(--accent);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+  .handle span {
+    display: block; padding: 8px 26px; border-radius: 999px;
+    background: #fff;
+    font-size: 20px; font-weight: 600; color: var(--ink);
+  }
+
+  @media (max-width: 360px) {
+    .card__title { font-size: 19px; }
+    .card__sub { font-size: 15px; }
+    .card__icon { width: 48px; height: 48px; }
+    .card__body { padding-left: 11px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="frame" aria-hidden="true"></div>
+<svg class="corner corner--tl" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+  <path d="M6 48V14a8 8 0 0 1 8-8h34"/><path d="M12 40V20a8 8 0 0 1 8-8h20"/>
+  <path d="M6 6l9 9"/><circle cx="18" cy="18" r="2.4" fill="currentColor" stroke="none"/>
+</svg>
+<svg class="corner corner--tr" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+  <path d="M6 48V14a8 8 0 0 1 8-8h34"/><path d="M12 40V20a8 8 0 0 1 8-8h20"/>
+  <path d="M6 6l9 9"/><circle cx="18" cy="18" r="2.4" fill="currentColor" stroke="none"/>
+</svg>
+<svg class="corner corner--bl" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+  <path d="M6 48V14a8 8 0 0 1 8-8h34"/><path d="M12 40V20a8 8 0 0 1 8-8h20"/>
+  <path d="M6 6l9 9"/><circle cx="18" cy="18" r="2.4" fill="currentColor" stroke="none"/>
+</svg>
+<svg class="corner corner--br" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+  <path d="M6 48V14a8 8 0 0 1 8-8h34"/><path d="M12 40V20a8 8 0 0 1 8-8h20"/>
+  <path d="M6 6l9 9"/><circle cx="18" cy="18" r="2.4" fill="currentColor" stroke="none"/>
+</svg>
+
+<main class="page">
+  <svg class="crown" viewBox="0 0 48 30" aria-hidden="true">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a77a2c"/><stop offset=".35" stop-color="#f1dca0"/><stop offset=".6" stop-color="#b98c3c"/><stop offset="1" stop-color="#f4e2ad"/></linearGradient></defs>
+    <path d="M4 24L2 7l11 8 11-13 11 13 11-8-2 17z" fill="url(#g)"/>
+    <rect x="4" y="25.5" width="40" height="3.5" rx="1.2" fill="url(#g)"/>
+    <circle cx="2" cy="6" r="2" fill="url(#g)"/><circle cx="24" cy="2" r="2" fill="url(#g)"/><circle cx="46" cy="6" r="2" fill="url(#g)"/>
+  </svg>
+
+  <div class="logo"><div class="logo__inner"><img src="images/logo.png" alt="Rayana Brand логотипі"></div></div>
+
+  <h1>Rayana Brand</h1>
+  <div class="divider" aria-hidden="true"><span></span></div>
+  <p class="tagline">БАЛАЛАР КИІМІ · АҚТАУ</p>
+
+  <a class="address" href="https://2giskz.app/aktau/geo/70000001065934392" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    Hazar Bazary, 019 бутик
+  </a>
+
+  <nav class="links">
+    <a class="card" href="https://wa.me/77756950180" target="_blank" rel="noopener"><span class="card__in">
+      <span class="card__icon"><span>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3z"/><path fill="#fff" d="M22.9 19.2c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 2.9 1.1 3.5.9 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.3-.3-.4-.6-.5z"/></svg>
+      </span></span>
+      <span class="card__body">
+        <span class="card__title">WHATSAPP</span>
+        <span class="card__sub">Тапсырыс және менеджермен байланыс</span>
+      </span>
+      <svg class="card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </span></a>
+
+    <a class="card" href="https://www.tiktok.com/@rayanabrand_aktau" target="_blank" rel="noopener"><span class="card__in">
+      <span class="card__icon"><span>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25F4EE" d="M20.5 4h-3.9v15.6a3.3 3.3 0 1 1-3.3-3.3c.3 0 .7 0 1 .1v-4a7.3 7.3 0 1 0 6.2 7.2v-8a8.7 8.7 0 0 0 5 1.6V9.3a5 5 0 0 1-5-5.3z" transform="translate(-1 -1)"/><path fill="#FE2C55" d="M20.5 4h-3.9v15.6a3.3 3.3 0 1 1-3.3-3.3c.3 0 .7 0 1 .1v-4a7.3 7.3 0 1 0 6.2 7.2v-8a8.7 8.7 0 0 0 5 1.6V9.3a5 5 0 0 1-5-5.3z" transform="translate(1 1)"/><path fill="#111" d="M20.5 4h-3.9v15.6a3.3 3.3 0 1 1-3.3-3.3c.3 0 .7 0 1 .1v-4a7.3 7.3 0 1 0 6.2 7.2v-8a8.7 8.7 0 0 0 5 1.6V9.3a5 5 0 0 1-5-5.3z"/></svg>
+      </span></span>
+      <span class="card__body">
+        <span class="card__title">TIKTOK</span>
+        <span class="card__sub">Бізге жазылыңыз</span>
+      </span>
+      <svg class="card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </span></a>
+
+    <a class="card" href="https://2giskz.app/aktau/geo/70000001065934392" target="_blank" rel="noopener"><span class="card__in">
+      <span class="card__icon"><span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#232a3d" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#f8cfdc"/></svg>
+      </span></span>
+      <span class="card__body">
+        <span class="card__title">БІЗ 2GIS-ТЕ</span>
+        <span class="card__sub">Бізді қалай табуға болады</span>
+      </span>
+      <svg class="card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </span></a>
+  </nav>
+
+  <div class="divider" style="margin-top:30px;max-width:280px" aria-hidden="true"><span></span></div>
+
+  <div class="info">
+    <p class="info__row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 9.5h18M6.5 15h4"/></svg>
+      Kaspi арқылы төлем
+    </p>
+    <p class="info__row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4.5l3.5 3.5V16h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+      Қазақстан бойынша жеткізу
+    </p>
+  </div>
+
+  <a class="handle" href="https://www.tiktok.com/@rayanabrand_aktau" target="_blank" rel="noopener"><span>@rayanabrand_aktau</span></a>
+</main>
+
+</body>
+</html>
